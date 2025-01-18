@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Glamour Retreat - Salão e SPA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="c:\Users\EMATERCE\Downloads\IMG_8965.JPG" type="image/x-icon">
+   <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #f5f0e1;
+            margin: 0;
+            padding: 0;
+            color: #4f4a4a;
+        }
+        header {
+            background-color: #c4a38e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+        }
+        .container {
+            padding: 30px;
+        }
+        .banner {
+            background-color: #c4a38e;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        .form-container input,
+        .form-container select,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .form-container button {
+            background-color: #c4a38e;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+        .form-container button:hover {
+            background-color: #9f836d;
+        }
+        footer {
+            background-color: #4f4a4a;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .hours {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f1e4d1;
+            text-align: center;
+        }
+        .services {
+            margin-top: 30px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .services h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .services ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .services li {
+            margin: 10px 0;
+        }
+        .contact-info {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f5f0e1;
+        }
+        .contact-info h3 {
+            margin-bottom: 15px;
+        }
+        .contact-info p {
+            font-size: 1.1em;
+        }
+        .total-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f1e4d1;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .confirmation-message {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Glamour Retreat</h1>
+    <p>Salão de Beleza & SPA</p>
+</header>
+
+<div class="banner">
+    <h2>Transforme seu visual e bem-estar no Glamour Retreat!</h2>
+</div>
+
+<div class="container">
+    <section class="hours">
+        <h3>Horário de Funcionamento</h3>
+        <p>Segunda a Sexta-feira</p>
+        <p>08:00 - 11:30 (Manhã)</p>
+        <p>13:00 - 18:00 (Tarde)</p>
+        <p>Sábado</p>
+        <p>08:00 - 14:00</p>
+    </section>
+
+    <div class="services">
+        <h3>Serviços Oferecidos</h3>
+        <form id="agendamentoForm">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" required>
+            <br>
+            <br>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <br>
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required>
+            <br>
+            <br>
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required>
+            <br>
+            <br>
+            <label for="data">Data do Atendimento:</label>
+            <input type="date" id="data" name="data" required>
+            <br>
+            <br>
+            <label for="hora">Hora do Atendimento:</label>
+            <select id="hora" name="hora" required>
+                <option value="08:00">08:00</option>
+                <option value="08:30">08:30</option>
+                <option value="09:00">09:00</option>
+                <option value="09:30">09:30</option>
+                <option value="10:00">10:00</option>
+                <option value="10:30">10:30</option>
+                <option value="11:00">11:00</option>
+                <option value="11:30">11:30</option>
+                <option value="13:00">13:00</option>
+                <option value="13:30">13:30</option>
+                <option value="14:00">14:00</option>
+                <option value="14:30">14:30</option>
+                <option value="15:00">15:00</option>
+                <option value="15:30">15:30</option>
+                <option value="16:00">16:00</option>
+                <option value="16:30">16:30</option>
+                <option value="17:00">17:00</option>
+                <option value="17:30">17:30</option>
+            </select>
+
+            <label for="servicos">Selecione os Serviços:</label>
+            <ul>
+                <li><input type="checkbox" data-preco="80" class="servico" id="corte" name="servicos" value="Corte feminino"> Corte feminino - R$ 80,00</li>
+                <li><input type="checkbox" data-preco="80" class="servico" id="escova" name="servicos" value="Escova modelada"> Escova modelada - R$ 80,00</li>
+                <li><input type="checkbox" data-preco="120" class="servico" id="hidratacao" name="servicos" value="Hidratação capilar"> Hidratação capilar - R$ 120,00</li>
+                <li><input type="checkbox" data-preco="150" class="servico" id="coloracao" name="servicos" value="Coloração"> Coloração - R$ 150,00</li>
+                <li><input type="checkbox" data-preco="700" class="servico" id="luzes" name="servicos" value="Luzes (cabelo longo)"> Luzes (cabelo longo) - R$ 700,00</li>
+                <li><input type="checkbox" data-preco="200" class="servico" id="progressiva" name="servicos" value="Progressiva"> Progressiva - R$ 200,00</li>
+                <li><input type="checkbox" data-preco="350" class="servico" id="alisamento" name="servicos" value="Alisamento (definitivo)"> Alisamento (definitivo) - R$ 350,00</li>
+                <li><input type="checkbox" data-preco="40" class="servico" id="manicure" name="servicos" value="Manicure simples"> Manicure simples - R$ 40,00</li>
+                <li><input type="checkbox" data-preco="80" class="servico" id="pedicure" name="servicos" value="Pedicure simples"> Pedicure simples - R$ 80,00</li>
+                <li><input type="checkbox" data-preco="150" class="servico" id="alongamento" name="servicos" value="Alongamento de unhas (gel)"> Alongamento de unhas (gel) - R$ 150,00</li>
+                <li><input type="checkbox" data-preco="90" class="servico" id="manutencao" name="servicos" value="Manutenção de unhas (gel)"> Manutenção de unhas (gel) - R$ 90,00</li>
+                <li><input type="checkbox" data-preco="40" class="servico" id="nailart" name="servicos" value="Nail art personalizada"> Nail art personalizada - R$ 40,00</li>
+                <li><input type="checkbox" data-preco="150" class="servico" id="limpeza" name="servicos" value="Limpeza de pele"> Limpeza de pele - R$ 150,00</li>
+                <li><input type="checkbox" data-preco="40" class="servico" id="sobrancelhas" name="servicos" value="Design de sobrancelhas"> Design de sobrancelhas - R$ 40,00</li>
+                <li><input type="checkbox" data-preco="60" class="servico" id="henna" name="servicos" value="Henna de sobrancelhas"> Henna de sobrancelhas - R$ 60,00</li>
+                <li><input type="checkbox" data-preco="800" class="servico" id="microblading" name="servicos" value="Microblading"> Microblading - R$ 800,00</li>
+                <li><input type="checkbox" data-preco="200" class="servico" id="extensao" name="servicos" value="Extensão de cílios (fio a fio)"> Extensão de cílios (fio a fio) - R$ 200,00</li>
+                <li><input type="checkbox" data-preco="120" class="servico" id="maquiagemsimples" name="servicos" value="Maquiagem simples"> Maquiagem simples - R$ 120,00</li>
+                <li><input type="checkbox" data-preco="200" class="servico" id="maquiagemfesta" name="servicos" value="Maquiagem para festas"> Maquiagem para festas - R$ 200,00</li>
+                <li><input type="checkbox" data-preco="400" class="servico" id="maquiagemnoiva" name="servicos" value="Maquiagem noiva (com prova)"> Maquiagem noiva (com prova) - R$ 400,00</li>
+                <li><input type="checkbox" data-preco="80" class="servico" id="depilacao_perna" name="servicos" value="Depilação (perna completa)"> Depilação (perna completa) - R$ 80,00</li>
+                <li><input type="checkbox" data-preco="30" class="servico" id="depilacao_axilas" name="servicos" value="Depilação (axilas)"> Depilação (axilas) - R$ 30,00</li>
+                <li><input type="checkbox" data-preco="70" class="servico" id="depilacao_intima" name="servicos" value="Depilação íntima"> Depilação íntima - R$ 70,00</li>
+                <li><input type="checkbox" data-preco="150" class="servico" id="drenagem" name="servicos" value="Drenagem linfática (sessão)"> Drenagem linfática (sessão) - R$ 150,00</li>
+                <li><input type="checkbox" data-preco="180" class="servico" id="bronzeamento" name="servicos" value="Bronzeamento artificial"> Bronzeamento artificial - R$ 180,00</li>
+            </ul>
+
+            <div class="total-container">
+                <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
+            </div>
+
+            <button type="submit">Confirmar Agendamento</button>
+        </form>
+        
+        <div class="confirmation-message" id="confirmationMessage">
+            <p>Seu agendamento foi realizado com sucesso! Aguardamos você.</p>
+        </div>
+    </div>
+</div>
+
+<div class="contact-info">
+    <h3>Localização</h3>
+    <p> Maracanaú, Ceará</p>
+    <p><strong>Instagram:</strong> @glamour_retreat</p>
+</div>
+
+<footer>
+    <p>&copy; 2025 Glamour Retreat | Todos os direitos reservados</p>
+</footer>
+
+<script>
+    // Atualiza o total dos serviços selecionados
+    const servicos = document.querySelectorAll(".servico");
+    const totalDisplay = document.getElementById("total");
+
+    servicos.forEach(servico => {
+        servico.addEventListener("change", atualizarTotal);
+    });
+
+    function atualizarTotal() {
+        let total = 0;
+        servicos.forEach(servico => {
+            if (servico.checked) {
+                total += parseFloat(servico.getAttribute("data-preco"));
+            }
+        });
+        totalDisplay.textContent = total.toFixed(2);
+    }
+
+    // Exibe a mensagem de confirmação ao submeter o formulário
+    const form = document.getElementById("agendamentoForm");
+    const confirmationMessage = document.getElementById("confirmationMessage");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Previne o envio do formulário
+
+        // Exibe a mensagem de confirmação
+        confirmationMessage.style.display = "block";
+        
+        // Esconde o formulário
+        form.style.display = "none";
+    });
+
+    // Definir o valor mínimo da data como a data atual
+    const dataInput = document.getElementById("data");
+    const hoje = new Date();
+    const ano = hoje.getFullYear();
+    const mes = String(hoje.getMonth() + 1).padStart(2, '0'); // Meses começam do 0
+    const dia = String(hoje.getDate()).padStart(2, '0');
+
+    dataInput.setAttribute('min', `${ano}-${mes}-${dia}`);
+</script>
+
+</body>
+</html>
